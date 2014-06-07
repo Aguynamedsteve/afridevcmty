@@ -19,5 +19,26 @@ module Afridevcmty
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    #Pry
+    silence_warnings do
+      begin
+        require 'pry'
+        IRB = Pry
+      rescue LoadError
+      end
+    end
+
+    # RSpec
+    config.generators do |g|
+      g.test_framework :rspec,
+        :fixtures => true,
+        :view_specs => false,
+        :helper_specs => false,
+        :routing_specs => false,
+        :controller_specs => true,
+        :request_specs => true
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
   end
 end

@@ -6,16 +6,14 @@ gem 'pg'
 
 gem 'unicorn'
 
-gem 'sass-rails'
+gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'coffee-script'
 gem 'bootstrap-sass'
 
-gem 'sidekiq'
 gem 'devise'
 gem 'cancan'
-gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'protected_attributes'
 gem 'ransack'
 gem 'kaminari'
@@ -41,11 +39,8 @@ group :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
-  gem 'show_me_the_cookies'
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'vcr'
-  gem 'rspec-sidekiq'
   gem 'webmock'
 end
