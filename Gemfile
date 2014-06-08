@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Her is an ORM (Object Relational Mapper) that maps REST resources to Ruby objects
+gem 'her'
