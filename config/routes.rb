@@ -7,7 +7,7 @@ Afridevcmty::Application.routes.draw do
   get "pages/home"
   devise_for :users
 
-  get 'coders#index'
+  get "coders/index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
