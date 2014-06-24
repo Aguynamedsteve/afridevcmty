@@ -11,10 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607050653) do
+ActiveRecord::Schema.define(version: 20140624185651) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "people", force: true do |t|
+    t.string   "login"
+    t.integer  "external_id"
+    t.string   "avatar_url"
+    t.string   "gravatar_id"
+    t.string   "url"
+    t.string   "html_url"
+    t.string   "followers_url"
+    t.string   "following_url"
+    t.string   "gists_url"
+    t.string   "starred_url"
+    t.string   "subscriptions_url"
+    t.string   "organizations_url"
+    t.string   "repos_url"
+    t.string   "events_url"
+    t.string   "received_events_url"
+    t.boolean  "type"
+    t.string   "name"
+    t.string   "company"
+    t.string   "blog"
+    t.string   "location"
+    t.string   "email"
+    t.boolean  "hireable"
+    t.text     "bio"
+    t.integer  "public_repos"
+    t.integer  "public_gists"
+    t.integer  "followers"
+    t.integer  "following"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140607050653) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
