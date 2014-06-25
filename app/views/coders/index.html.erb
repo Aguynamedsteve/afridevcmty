@@ -1,5 +1,5 @@
 <h2>Listing developers from Africa</h2>
-<p>count(<%= @directory['total_count'] %>)</p>
+<p>count(<%= @users.count %>)</p>
 <table>
   <thead>
     <tr>
@@ -9,11 +9,13 @@
   </thead>
 
   <tbody>
-    <% @directory['items'].each do |user| %>
+    <% @directory.each do |user| %>
       <tr>
-        <td><%= user['id'] %></td>
-        <td><%= user['login'] %></td>
+        <td><%= user[:id] %></td>
+        <td><%= user[:login] %></td>
+        <td><a href=<%= user[:html_url] %>>Github Link</a></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= paginate @directory %>

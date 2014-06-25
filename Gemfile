@@ -15,13 +15,14 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'coffee-script'
 gem 'bootstrap-sass'
-
+gem 'rest_client'
 gem 'devise'
 gem 'cancan'
 gem 'protected_attributes'
 gem 'ransack'
 gem 'kaminari'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'github-api'
 
 group :production do
   gem 'rails_12factor'

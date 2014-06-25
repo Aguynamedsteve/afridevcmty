@@ -82,12 +82,17 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    github-api (0.0.1)
+      httparty
     her (0.7.1)
       activemodel (>= 3.0.0, < 4.2)
       activesupport (>= 3.0.0, < 4.2)
       faraday (>= 0.8, < 1.0)
       multi_json (~> 1.7)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
@@ -105,7 +110,9 @@ GEM
     mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
+    netrc (0.7.7)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
@@ -152,6 +159,8 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.0.0)
+    rest_client (1.7.3)
+      netrc (~> 0.7.7)
     rspec-core (3.0.0)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.0)
@@ -227,6 +236,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   figaro
+  github-api
   her
   jquery-rails
   kaminari
@@ -237,6 +247,7 @@ DEPENDENCIES
   rails_12factor
   rails_stdout_logging
   ransack
+  rest_client
   rspec-rails
   sass-rails (~> 4.0.2)
   sprockets-rails (~> 2.0.0)
