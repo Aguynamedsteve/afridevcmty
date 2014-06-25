@@ -1,6 +1,5 @@
 Afridevcmty::Application.routes.draw do
-  root to: "pages#home"
+  resources :users
 
-  get "pages/home"
-  devise_for :users
+  root to: "users#index"
 end

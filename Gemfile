@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
-gem 'sprockets-rails', '~> 2.0.0'
+gem 'sprockets-rails'
 gem 'unicorn'
 gem 'activesupport'
 
@@ -12,12 +12,13 @@ gem 'jquery-rails'
 gem 'coffee-script'
 gem 'bootstrap-sass'
 
-gem 'devise'
 gem 'cancan'
 gem 'protected_attributes'
 gem 'ransack'
 gem 'kaminari'
 gem 'best_in_place', github: 'bernat/best_in_place'
+
+gem 'rest-client', '~> 1.6.7'
 
 group :production do
   gem 'rails_12factor'

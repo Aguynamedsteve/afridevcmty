@@ -8,6 +8,7 @@ class GithubApiDataService
   @dates = ["<=2012-01-01", "2012-01-01..2012-12-31", "2013-01-01..2013-12-31", ">=2014-01-01"]
 
   def self.fetch_all_users
+    puts "Fetching object..."
     data = []
     @dates.each do |date|
       begin
@@ -17,13 +18,13 @@ class GithubApiDataService
           response = JSON.parse(response, :symbolize_names => true)
           data.concat(response[:items])
           sleep 3
-          #puts "#{data.count} from page #{i}"
         end
       rescue Exception => err
         #puts "#{err.message}: Moving on..."
         next
       end
     end
+    puts "Total objects collected: #{data.count}."
     return data
   end
 end

@@ -1,8 +1,8 @@
-class CreatePeople < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :people do |t|
+    create_table :users, {:id => false} do |t|
       t.string :login
-      t.integer :external_id
+      t.integer :id, null: false
       t.string :avatar_url
       t.string :gravatar_id
       t.string :url
@@ -16,13 +16,15 @@ class CreatePeople < ActiveRecord::Migration
       t.string :repos_url
       t.string :events_url
       t.string :received_events_url
-      t.boolean :type
+      t.string :type
+      t.float :score
       t.string :name
       t.string :company
       t.string :blog
       t.string :location
       t.string :email
       t.boolean :hireable
+      t.boolean :site_admin
       t.text :bio
       t.integer :public_repos
       t.integer :public_gists
