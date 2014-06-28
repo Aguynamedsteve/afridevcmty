@@ -41,8 +41,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.1)
-      sass (~> 3.2)
     builder (3.2.2)
     cancan (1.6.10)
     capybara (2.3.0)
@@ -52,6 +50,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     coderay (1.1.0)
+    coffee-rails (4.0.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -72,6 +73,9 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    foundation-rails (5.3.0.1)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.1.1)
@@ -120,6 +124,7 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_layout (1.0.20)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.1.1)
@@ -154,12 +159,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.2)
     safe_yaml (1.0.3)
-    sass (3.2.19)
-    sass-rails (4.0.3)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0)
+    sass (3.3.8)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -177,6 +177,8 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    turbolinks (2.2.2)
+      coffee-rails
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.1)
@@ -202,7 +204,6 @@ DEPENDENCIES
   best_in_place!
   better_errors
   binding_of_caller
-  bootstrap-sass
   cancan
   capybara
   coffee-script
@@ -210,6 +211,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   figaro
+  foundation-rails
   jquery-rails
   kaminari
   pg
@@ -217,13 +219,14 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.1)
   rails_12factor
+  rails_layout
   rails_stdout_logging
   ransack
   rest-client (~> 1.6.7)
   rspec-rails
-  sass-rails (~> 4.0.2)
   sprockets-rails
   sqlite3
+  turbolinks
   uglifier
   unicorn
   vcr

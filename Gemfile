@@ -6,11 +6,11 @@ gem 'sprockets-rails'
 gem 'unicorn'
 gem 'activesupport'
 
-gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'coffee-script'
-gem 'bootstrap-sass'
+gem 'foundation-rails'
+gem 'turbolinks'
 
 gem 'cancan'
 gem 'protected_attributes'
@@ -29,6 +29,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails_layout'
 end
 
 group :development, :test do
