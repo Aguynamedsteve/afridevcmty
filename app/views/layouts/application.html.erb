@@ -5,23 +5,24 @@
     <title><%= content_for?(:title) ? yield(:title) : "AfriDevCmty" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Afridevcmty" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class="contain-to-grid">
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-      <section id="top-backdrop">
-      </section>
-      <div class="large-10 large-centered columns">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= render 'layouts/navigation' %>
       </div>
-    </main>
-    <%= render 'layouts/footer' %>
+    </div>
+
+   <div class="row">
+    <%= render 'layouts/side_navigation' %>
+    <div class="large-9 columns" style="padding-left: 0 !important">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
   </body>
 </html>

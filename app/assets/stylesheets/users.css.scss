@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.slot {
+.module {
+  height: 170px;
+  max-width: 705px;
   margin-bottom: 15px;
   background: #FFFFFF;
   -webkit-border-radius: 4px;
@@ -10,11 +12,19 @@
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   overflow: hidden;
-  .inner-slot {
-    padding: 30px 40px 20px 40px;
-
+  .profile-pic {
+    height: 100%;
+    width: 180px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    float:left;
+  }
+  .profile-info {
+    padding: 10px !important;
+    margin: 0;
     ul {
       list-style: none;
     }
   }
 }
+

@@ -13,12 +13,81 @@
  *= require_tree .
  *= require_self
  */
- $page-width: 1160px;
+ $highlight-color: #0084B4;
+ $link-background: rgba(0, 0, 0, 0.025);
 
-#header {
-  width: $page-width;
-  margin: 0 auto;
-  padding: 0 20px;
+#top-nav {
+  font-size: 16px;
+  padding: 25px 0 0;
+  margin-bottom: 15px;
+  #inner-top-nav {
+    padding: 5px 10px 3px;
+  }
+  a {
+    height: 46px;
+    &:active {
+      font-style: bold;
+    }
+    &:focus,
+    &:hover {
+      border-bottom: 4px solid $highlight-color;
+      transition: all .15s ease-in-out;
+    }
+  }
+}
+
+.sub-header {
+  a {
+    margin-right: 12px;
+  }
+  a:last-child {
+    margin-right: 0;
+  }
+}
+
+.side-nav {
+  font-size: 16px;
+  list-style: none;
+  li {
+    font-size: inherit;
+    margin: 0;
+    &:active {
+      border-left: 4px solid lighten($highlight-color, 10%);
+    }
+    &:hover {
+      border-left: 4px solid $highlight-color;
+      transition: all .15s ease-in-out;
+    }
+    a {
+      color: #000 !important;
+      &:active {
+        font-style: bold;
+      }
+      &:not(.button):hover,
+      &:not(.button):focus {
+        background: $link-background;
+        color: black;
+      }
+    }
+  }
+}
+
+.pagination {
+  li:focus,
+  li:hover {
+    border-bottom: 1px solid $highlight-color;
+  }
+  .active {
+     background: $link-background;
+     border-bottom: 1px solid $highlight-color;
+     a {
+      color: black !important;
+     }
+   }
+}
+
+body {
+  background-color: #e5e9ec;
 }
 
 #footer {

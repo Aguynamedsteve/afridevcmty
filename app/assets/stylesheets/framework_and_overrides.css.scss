@@ -1,21 +1,6 @@
 // import the CSS framework
 @import "foundation";
 
-// override for the 'Home' navigation link
-
-.top-bar {
-  height: 80px;
-  .name {
-    font-size: rem-calc(13);
-    line-height: 100px;
-    a {
-      font-weight: normal;
-      color: white;
-      padding: 0 15px;
-    }
-  }
-}
-
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
 @mixin twelve-columns {
@@ -46,7 +31,6 @@
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #eee;
   }
 section {
   @extend .row;
