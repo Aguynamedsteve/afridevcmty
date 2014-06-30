@@ -16,13 +16,10 @@
       </div>
     </div>
 
-   <div class="row">
-    <%= render 'layouts/side_navigation' %>
-    <div class="large-9 columns" style="padding-left: 0 !important">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <div class="row">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
     </div>
-  </div>
-  <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

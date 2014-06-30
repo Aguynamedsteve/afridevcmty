@@ -1,18 +1,21 @@
-<ul class="pagination"><%= paginate @users %></ul>
-  <% @users.each do |user| %>
-    <div class="module">
-      <a href="<%= user_path(user) %>">
-        <img class="profile-pic" src="<%= user.avatar_url %>" alt="">
-      </a>
-      <div class="profile-info">
-        <ul>
-          <li><h4><%= user.login %></h4></li>
-          <li><h5><%= user.html_url %></h5></li>
-          <li><%= user.url %></li>
-        </ul>
+<%= render 'layouts/side_navigation' %>
+<div class="large-9 columns" style="padding-left: 0 !important">
+  <ul class="pagination"><%= paginate @users %></ul>
+    <% @users.each do |user| %>
+      <div class="module">
+        <a href="<%= user_path(user) %>">
+          <img class="profile-pic" src="<%= user.avatar_url %>" alt="">
+        </a>
+        <div class="profile-info">
+          <ul>
+            <li><h4><%= user.login %></h4></li>
+            <li><h5><%= user.html_url %></h5></li>
+            <li><%= user.url %></li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-  <% #break %>
-  <% end %>
-<ul class="pagination"><%= paginate @users %></ul>
+    <% #break %>
+    <% end %>
+  <ul class="pagination"><%= paginate @users %></ul>
+</div>

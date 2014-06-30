@@ -19,6 +19,8 @@ gem 'kaminari'
 gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'rest-client', '~> 1.6.7'
+# gem 'sass-rails'
+# gem 'font-awesome-sass'
 
 group :production do
   gem 'rails_12factor'
