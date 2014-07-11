@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
-gem 'sprockets-rails'
+gem 'sprockets-rails', '~> 2.0'
 gem 'unicorn'
 gem 'activesupport'
 
@@ -19,8 +19,9 @@ gem 'kaminari'
 gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'rest-client', '~> 1.6.7'
-# gem 'sass-rails'
-# gem 'font-awesome-sass'
+gem 'sass-rails', '~> 4.0.3'
+gem 'font-awesome-sass'
+gem 'sass', '~> 3.2.0'
 
 group :production do
   gem 'rails_12factor'
