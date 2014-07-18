@@ -14,6 +14,9 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# rake db:data:dump   ->   Dump contents of Rails database to db/data.yml
+# rake db:data:load   ->   Load contents of db/data.yml into the database
+# git push -f heroku
 production:
   adapter: postgresql
   encoding: unicode

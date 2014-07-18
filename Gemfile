@@ -22,6 +22,7 @@ gem 'rest-client', '~> 1.6.7'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass', '~> 4.1.0'
 gem 'sass', '~> 3.2.0'
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
 group :production do
   gem 'rails_12factor'
