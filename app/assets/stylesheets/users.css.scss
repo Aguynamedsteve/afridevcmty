@@ -3,28 +3,162 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .module {
+  position: relative;
+  float: left;
   height: 170px;
-  max-width: 705px;
-  margin-bottom: 15px;
+  width: 450px;
+  padding: 10px;
+  margin: 10px;
   background: #FFFFFF;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.1);
   overflow: hidden;
   .profile-pic {
-    height: 100%;
-    width: 180px;
+    height: 85%;
+    width: 135px;
     margin: 0 20px 0 0;
-    padding: 0;
+    padding: 10px;
     float:left;
   }
   .profile-info {
+    position: relative;
     padding: 10px !important;
-    margin: 0;
+    margin-left: 28%;
+    height: 85%;
     ul {
       list-style: none;
+      color: #999999;
+      li {
+        a {
+          color: #333;
+        }
+      }
+      .profile-name {
+        font-size: 17px;
+      }
+      .profile-handle {
+        font-size: 15px;
+        padding-bottom: 3px;
+      }
+      .profile-data {
+        font-size: 13px;
+        line-height: 14px;
+      }
+    }
+    .profile-update {
+      position: absolute;
+      top: 0;
+      right: 0;
+      a {
+        color: green;
+      }
+    }
+    .profile-time {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .module-status {
+    padding-top: 5px;
+    border-top: 1px solid #dddddd;
+    height: 20px;
+    text-transform: uppercase;
+    span {
+      padding-left: 5px;
+    }
+    i {
+      font-size: 16px;
+      padding-right: 3px;
     }
   }
 }
 
+.page-module-title {
+  text-align: center;
+  padding-bottom: 20px;
+  span {
+    float: left;
+
+  }
+}
+
+.page-module {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 600px;
+  padding: 10px;
+  background: #FFFFFF;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  .profile-pic {
+    height: 200px;
+    width: 200px;
+    margin: 0 20px 0 0;
+    padding: 10px;
+    float:left;
+  }
+  .profile-stats {
+    padding-left: 30%;
+    list-style: none;
+    height: 180px;
+    padding-top: 30px;
+    ul {
+      li {
+        display: inline-block;
+        ul {
+          li{
+            display: block;
+          }
+        }
+        .stat-header {
+          font-size: 13px;
+          text-transform: uppercase;
+        }
+        .stat-body {
+          text-transform: capitalize;
+        }
+      }
+    }
+    .profile-brief {
+      display: block;
+      padding-bottom: 20px;
+      li {
+        display: block;
+      }
+      .stat-header {
+        font-size: 22px;
+      }
+    }
+  }
+  .profile-body {
+    list-style: none;
+    margin-left: -10px;
+    margin-bottom: 5px;
+    ul {
+      line-height: 22px;
+      li{
+        display: inline-block;
+      }
+    }
+    .profile-body-pair {
+      li:first-child {
+        color: #999999;
+      }
+    }
+  }
+  .profile-links {
+    padding-left: 0px;
+    span {
+      color: #999999;
+    }
+  }
+}

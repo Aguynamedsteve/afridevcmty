@@ -12,28 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
  $highlight-color: #0084B4;
  $link-background: rgba(0, 0, 0, 0.025);
 
 #top-nav {
-  font-size: 16px;
   padding: 25px 0 0;
   margin-bottom: 15px;
   #inner-top-nav {
     padding: 5px 10px 3px;
   }
-  a {
-    height: 46px;
-    &:active {
-      font-style: bold;
-    }
-    &:focus,
-    &:hover {
-      border-bottom: 4px solid $highlight-color;
-      transition: all .15s ease-in-out;
-    }
-  }
+  // a {
+  //   height: 46px;
+  //   &:active {
+  //     font-style: bold;
+  //   }
+  //   &:focus,
+  //   &:hover {
+  //     border-bottom: 4px solid $highlight-color;
+  //     transition: all .15s ease-in-out;
+  //   }
+  // }
 }
 
 .sub-header {
@@ -46,10 +46,8 @@
 }
 
 .side-nav {
-  font-size: 16px;
   list-style: none;
   li {
-    font-size: inherit;
     margin: 0;
     &:active {
       border-left: 4px solid lighten($highlight-color, 10%);
@@ -73,13 +71,14 @@
 }
 
 .pagination {
-  li:focus,
-  li:hover {
-    border-bottom: 1px solid $highlight-color;
-  }
+  clear: both;
+  // li:focus,
+  // li:hover {
+  //   border-bottom: 1px solid $highlight-color;
+  // }
   .active {
-     background: $link-background;
-     border-bottom: 1px solid $highlight-color;
+     // background: $link-background;
+     // border-bottom: 1px solid $highlight-color;
      a {
       color: black !important;
      }
@@ -91,7 +90,7 @@ body {
 }
 
 #footer {
-  padding-top: 20px;
+  padding: 20px 0;
   .inner-footer {
     padding: 20px 0 10px 0;
   }

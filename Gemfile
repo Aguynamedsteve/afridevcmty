@@ -20,7 +20,7 @@ gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'rest-client', '~> 1.6.7'
 gem 'sass-rails', '~> 4.0.3'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.1.0'
 gem 'sass', '~> 3.2.0'
 
 group :production do

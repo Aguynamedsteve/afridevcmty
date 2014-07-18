@@ -1,139 +1,143 @@
+<div class="page-module-title">
+    PROFILE DETAILS
+</div>
 <p id="notice"><%= notice %></p>
+<div class="large-12 columns">
+  <div class="page-module">
+    <img class="profile-pic" src="<%= @user.avatar_url %>" alt="#image_error">
+    <ul class="profile-stats">
+      <li>
+        <ul class="profile-brief">
+          <li class="stat-header"><%= @user.name %></li>
+          <li>@<%= @user.login %></li>
+          <li><%= @user.email %></li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li style="margin-left: -19px;">
+            <ul class="text-center">
+              <li class="stat-header">Followers</li>
+              <li class="stat-body"><%= @user.followers %></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="text-center">
+              <li class="stat-header">Following</li>
+              <li class="stat-body"><%= @user.following %></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="text-center">
+              <li class="stat-header">Hireable</li>
+              <li class="stat-body"><%= @user.hireable %></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="profile-body">
+      <li>
+        <ul class="profile-body-pair">
+          <li>Location:</li>
+          <li><%= @user.location %></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Company:</li>
+          <li><%= @user.company %></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Email:</li>
+          <li><a href="mailto:<%= @user.email %>"><%= @user.email %></a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Bio:</li>
+          <li><%= @user.bio %></li>
+        </ul>
+      </li>
 
-<p>
-  <strong>Login:</strong>
-  <%= @user.login %>
-</p>
+      <li>
+        <ul class="profile-body-pair">
+          <li class="stat-header">Public repos</li>
+          <li class="stat-body"><%= @user.public_repos %></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Public gists</li>
+          <li><%= @user.public_gists %></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Created:</li>
+          <li><%= @user.created_at.strftime("%d %B %Y") %></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="profile-body-pair">
+          <li>Updated:</li>
+          <li><%= @user.updated_at.strftime("%d %B %Y") %></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="profile-links">
+      <ul>
+        <li>
+          <a href="<%= @user.events_url %>" target="_blank"><span>Events url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.received_events_url %>" target="_blank"><span>Received events url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.gists_url %>" target="_blank"><span>Gists url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.starred_url %>" target="_blank"><span>Starred url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.subscriptions_url %>" target="_blank"><span>Subscriptions url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.organizations_url %>" target="_blank"><span>Organizations url</span></a>
+        </li>
+        <li>
+          <a href="<%= @user.repos_url %>" target="_blank"><span>Repos url</span></a>
+        </li>
+        <li>
+          <span>Url</span>
+          <a href="<%= @user.url %>" target="_blank"> &mdash; <%= @user.url %></a>
+        </li>
+        <li>
+          <span>Html url</span>
+          <a href="<%= @user.html_url %>" target="_blank">&mdash; <%= @user.html_url %></a>
+        </li>
+        <li>
+          <span>Blog</span>
+          <a href="<%= @user.blog %>" target="_blank"> &mdash; <%= @user.blog %></a>
+        </li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <strong><%= link_to 'Back', users_path %></strong>
 
-<p>
-  <strong>Id:</strong>
-  <%= @user.id %>
-</p>
+      <% if !@user.updated? %>
+      |
+      <strong>
+        <span class="profile-update">
+          <a class="profile-update-link">
+            <i class="fa fa-refresh"></i> Update
+          </a>
+        </span>
+      </strong>
+      <% end %>
+    <div>
+  </div>
+</div>
 
-<p>
-  <strong>Avatar url:</strong>
-  <%= @user.avatar_url %>
-</p>
-
-<p>
-  <strong>Gravatar:</strong>
-  <%= @user.gravatar_id %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @user.url %>
-</p>
-
-<p>
-  <strong>Html url:</strong>
-  <%= @user.html_url %>
-</p>
-
-<p>
-  <strong>Followers url:</strong>
-  <%= @user.followers_url %>
-</p>
-
-<p>
-  <strong>Following url:</strong>
-  <%= @user.following_url %>
-</p>
-
-<p>
-  <strong>Gists url:</strong>
-  <%= @user.gists_url %>
-</p>
-
-<p>
-  <strong>Starred url:</strong>
-  <%= @user.starred_url %>
-</p>
-
-<p>
-  <strong>Subscriptions url:</strong>
-  <%= @user.subscriptions_url %>
-</p>
-
-<p>
-  <strong>Organizations url:</strong>
-  <%= @user.organizations_url %>
-</p>
-
-<p>
-  <strong>Repos url:</strong>
-  <%= @user.repos_url %>
-</p>
-
-<p>
-  <strong>Events url:</strong>
-  <%= @user.events_url %>
-</p>
-
-<p>
-  <strong>Received events url:</strong>
-  <%= @user.received_events_url %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @user.type %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
-
-<p>
-  <strong>Blog:</strong>
-  <%= @user.blog %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @user.location %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Hireable:</strong>
-  <%= @user.hireable %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
-
-<p>
-  <strong>Public repos:</strong>
-  <%= @user.public_repos %>
-</p>
-
-<p>
-  <strong>Public gists:</strong>
-  <%= @user.public_gists %>
-</p>
-
-<p>
-  <strong>Followers:</strong>
-  <%= @user.followers %>
-</p>
-
-<p>
-  <strong>Following:</strong>
-  <%= @user.following %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

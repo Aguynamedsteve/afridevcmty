@@ -1,21 +1,74 @@
-<%= render 'layouts/side_navigation' %>
-<div class="large-9 columns" style="padding-left: 0 !important">
-  <ul class="pagination"><%= paginate @users %></ul>
-    <% @users.each do |user| %>
-      <div class="module">
-        <a href="<%= user_path(user) %>">
-          <img class="profile-pic" src="<%= user.avatar_url %>" alt="">
-        </a>
-        <div class="profile-info">
-          <ul>
-            <li><h4><%= user.login %></h4></li>
-            <li><h5><%= user.html_url %></h5></li>
-            <li><%= user.url %></li>
-          </ul>
+<div class="page-module-title">
+  ALL USERS
+</div>
+<div class="large-12 columns">
+  <% @users.each do |user| %>
+    <div class="module">
+      <a href="<%= user_path(user) %>">
+        <img class="profile-pic" src="<%= user.avatar_url %>" alt="#image_error">
+      </a>
+      <div class="profile-info">
+        <ul>
+          <% if !user.updated? %>
+            <span class="profile-update small-data">
+              <a class="profile-update-link">
+                <i class="fa fa-refresh"></i> UPDATE
+              </a>
+            </span>
+          <% end %>
+          <li class="profile-name">
+            <a href="<%= user_path(user) %>"><%= user.name.nil? ? raw("&mdash;"):  user.name %></a>
+          </li>
+          <li class="profile-handle">@<%= user.login %></li>
+          <li class="profile-data">Blogs at
+            <a href="<%= user.blog %>" target="_blank">
+              <%= user.blog.nil? ? raw("&mdash;"): user.blog %>
+            </a>
+          </li>
+          <li class="profile-data">Lives in <a><%= user.location.nil? ? raw("&mdash;"): user.location %></a></li>
+          <li class="profile-data">Available for hire?<a>
+            <% if user.hireable.nil? %>
+              <span>Unknown</span>
+            <% elsif user.hireable %>
+              <span style="color: green;">Yes</span>
+            <% else %>
+              <span style="color: red;">No</span>
+            <% end %>
+            </a>
+          </li>
+          <span class="profile-time small-data"><%= user.created_at.strftime("%I:%M %P - %d %b %Y") %></span>
+        </ul>
+      </div>
+      <div class="module-status small-data">
+        <% if !user.following.nil? %>
+          <span>
+            <strong><%= user.following %> </strong> following
+          </span>
+        <% end %>
+        <% if !user.followers.nil? %>
+          <span>
+            <strong><%= user.followers %> </strong> followers
+          </span>
+        <% end %>
+        <div class="pull-right">
+          <% if !user.email.nil? %>
+            <% if !user.email.empty? %>
+              <span>
+                <a href="mailto:<%= user.email %>">
+                  <i class="fa fa-envelope"></i>
+                </a>
+              </span>
+            <% end %>
+          <% end %>
+          <span>
+            <a href="<%= user.html_url %>" target="_blank">
+              <i class="fa fa-mail-reply-all"></i>
+            </a>
+          </span>
         </div>
       </div>
-
-    <% #break %>
-    <% end %>
+    </div>
+  <% #break %>
+  <% end %>
   <ul class="pagination"><%= paginate @users %></ul>
 </div>

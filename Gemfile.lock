@@ -218,7 +218,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   figaro
-  font-awesome-sass
+  font-awesome-sass (~> 4.1.0)
   foundation-rails
   jquery-rails
   kaminari

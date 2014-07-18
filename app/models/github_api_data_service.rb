@@ -8,7 +8,7 @@ class GithubApiDataService
   @dates = ["<=2012-01-01", "2012-01-01..2012-12-31", "2013-01-01..2013-12-31", ">=2014-01-01"]
 
   def self.fetch_all_users
-    puts "Fetching object..."
+    puts "Fetching objects..."
     data = []
     @dates.each do |date|
       begin
@@ -20,11 +20,27 @@ class GithubApiDataService
           sleep 3
         end
       rescue Exception => err
-        #puts "#{err.message}: Moving on..."
+        puts "#{err.message}: Moving on..."
         next
       end
     end
     puts "Total objects collected: #{data.count}."
     return data
+  end
+
+  def self.get_user(url)
+    puts "Fetching #{url}"
+    begin
+      # params = {:params => {:access_token => ""}}
+      # response = RestClient.get url, params
+      response = RestClient.get url
+      response = JSON.parse(response, :symbolize_names => true)
+    rescue Exception => err
+      puts "#{err.message}: Error detected"
+      sleep 60
+      puts "Retrying.."
+      retry
+    end
+    return response
   end
 end
