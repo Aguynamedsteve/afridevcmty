@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = Kaminari.paginate_array(User.all).page(params[:page]).per(100)
+    @users = Kaminari.paginate_array(User.all.uniq).page(params[:page]).per(100)
   end
 
   # GET /users/1
