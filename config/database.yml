@@ -22,5 +22,3 @@ production:
   encoding: unicode
   database: afridevcmty
   pool: 5
-  username: aj
-  password:
